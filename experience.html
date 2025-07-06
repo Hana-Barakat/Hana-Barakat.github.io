@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hana Barakat | Experience & Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FDFBF8; /* Parchment White */
+            background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom color palette inspired by user's CSS */
+        .bg-primary { background-color: #2B3440; } /* Deep Slate */
+        .text-primary { color: #2B3440; }
+        .bg-secondary { background-color: #D4AF37; } /* Antique Gold */
+        .text-secondary { color: #D4AF37; }
+        .border-secondary { border-color: #D4AF37; }
+        .bg-tertiary { background-color: #A28A6A; } /* Warm Taupe */
+        .text-tertiary { color: #A28A6A; }
+        .bg-parchment { background-color: #FDFBF8; }
+        .text-white-light { color: rgba(255, 255, 255, 0.9); } /* A slightly off-white for text on dark backgrounds */
+
+
+        /* Card styles */
+        .experience-card {
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(43, 52, 64, 0.2);
+        }
+        .page-nav-buttons {
+            margin: 40px;
+        }
+
+        /* Modal styles */
+        .modal-overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .modal-content {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        /* Custom styles for contact section to match main profile page */
+        .contact-info-section {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: 50px auto 50px auto;
+            text-align: center;
+        }
+
+        .section-header-contact {
+            display: inline-block;
+            border-bottom: 4px solid #D4AF37; /* Antique Gold */
+            padding-bottom: 10px;
+            font-size: 2.5rem;
+            color: #2B3440; /* Deep Slate */
+            margin-bottom: 50px;
+        }
+
+        .section-header-contact .fas {
+            margin-right: 15px;
+            color: #D4AF37; /* Antique Gold */
+        }
+
+        .contact-card {
+            background: #FFFFFF; /* White */
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(43, 52, 64, 0.12);
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(43, 52, 64, 0.2);
+        }
+
+        .contact-message {
+            font-size: 1.2rem;
+            color: #2B3440; /* Deep Slate */
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            font-size: 2.2rem;
+            color: #D4AF37; /* Antique Gold */
+            flex-shrink: 0;
+        }
+
+        .contact-link {
+            font-size: 1.3rem;
+            color: #2B3440; /* Deep Slate */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: #A28A6A; /* Warm Taupe */
+            transform: translateY(-2px);
+        }
+
+        .contact-cta {
+            font-size: 1.1rem;
+            color: #2B3440; /* Deep Slate */
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        /* Navigation Buttons */
+        .page-nav-buttons {
+            display: flex;
+            justify-content: center; /* Center buttons */
+            gap: 2rem; /* Space between buttons */
+            margin-bottom: 3rem; /* Space below buttons */
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        }
+
+        .page-nav-buttons .btn {
+            padding: 12px 28px;
+            background-color: #D4AF37; /* Antique Gold */
+            color: #2B3440; /* Deep Slate */
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .page-nav-buttons .btn:hover {
+            background-color: #2B3440; /* Deep Slate */
+            color: #D4AF37; /* Antique Gold */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section-header-contact {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .contact-card {
+                padding: 2rem;
+            }
+            .contact-message {
+                font-size: 1rem;
+            }
+            .contact-icon {
+                font-size: 1.8rem;
+            }
+            .contact-link {
+                font-size: 1.1rem;
+            }
+            .page-nav-buttons {
+                flex-direction: column; /* Stack buttons vertically on small screens */
+                align-items: center; /* Center stacked buttons */
+                gap: 1rem;
+            }
+        }
+
+       /* Footer */
+footer {
+    background: linear-gradient(135deg, #2B3440 0%, #3f4a5c 50%, #4a566a 100%);
+    color: #fff;
+    text-align: center;
+    padding: 7rem 2rem;
+    border-top: 15px solid #D4AF37;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZ3JhcGggMHgyNSIgb3BhY2l0eTogLjE1IiBoZWlnaHQ9IjMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZSI+PGcgb3BhY2l0eTogLjMwNSIgZmlsbD0iI0QwQUM0MyI+PHBhdGggZD0iTTIuMTA1IDUyLjU0NUwzMCAyMi41NjNsMjcuODk1IDI5Ljk4MnYxLjc1SC4xMDV6IiAvPjxwYXRoIGQ9Ik0zMC0uNTYyTDIuMTA1IDI5LjQxOHYxLjc1TDMwIDEuMTg4IDU3Ljg5NSAzMS4xNjh2LTEuNzVMMzAtLjU2MnoiIC8+PC9nPg==');
+    background-size: 60px;
+    opacity: 0.08;
+    pointer-events: none;
+    animation: backgroundPan 60s linear infinite;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 900;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.4), 0 0 10px #D4AF37;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #FFD700, #DAA520, #FFCC00);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+.footer-tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #A28A6A;
+    margin-bottom: 3.5rem;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
+    opacity: 0.95;
+    animation: fadeIn 2s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.social-icon {
+    color: #D4AF37;
+    font-size: 3.8rem;
+    transition: color 0.4s ease, transform 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    animation: bounceIn 1s ease-out forwards;
+}
+
+.social-links a:nth-child(1) { animation-delay: 1s; }
+.social-links a:nth-child(2) { animation-delay: 1.2s; }
+
+.social-icon:hover {
+    color: #fff;
+    transform: translateY(-12px) scale(1.3);
+    text-shadow: 0 0 20px #D4AF37, 0 0 30px #D4AF37, 0 0 40px #D4AF37;
+}
+
+.footer-bottom-text {
+    margin-top: 5rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    opacity: 0.8;
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 3px 3px 8px rgba(0,0,0,0.4), 0 0 10px #D4AF37; }
+    100% { text-shadow: 3px 3px 10px rgba(0,0,0,0.6), 0 0 20px #D4AF37, 0 0 30px #D4AF37; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes backgroundPan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 5rem 1rem;
+        border-top: 10px solid #D4AF37;
+    }
+
+    footer h2 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+        font-size: 1.4rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .social-links {
+        gap: 30px;
+    }
+
+    .social-icon {
+        font-size: 3rem;
+    }
+
+    .footer-bottom-text {
+        margin-top: 3rem;
+        font-size: 0.9rem;
+    }
+}
+    </style>
+</head>
+<body class="bg-parchment text-primary">
+
+    <header class="text-center py-12 md:py-20 bg-primary text-white" style="background: linear-gradient(rgba(43, 52, 64, 0.85), rgba(43, 52, 64, 0.4)), url('comunication\ img.webp'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold text-secondary">Hana Barakat</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-300">Experience & Education Details</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="experience">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="border-b-4 border-secondary pb-4">Professional Experience</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                </div>
+        </section>
+
+        <section id="education" class="mt-20">
+             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="border-b-4 border-secondary pb-4">Education & Certifications</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+                </div>>
+        </section>
+
+        <section id="contact-info-section" class="contact-info-section">
+            <h1 class="section-header-contact"><i class="fas fa-handshake"></i> Let's Connect!</h1>
+            <div class="contact-card">
+                <p class="contact-message">I'm always open to discussing new opportunities, collaborations, or simply sharing insights on People & Culture. Feel free to reach out!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <a href="mailto:hana.barakat94@gmail.com" class="contact-link">hana.barakat94@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin-in contact-icon"></i>
+                        <a href="https://www.linkedin.com/in/hanabarakat" target="_blank" class="contact-link">LinkedIn Profile</a>
+                    </div>
+                </div>
+                <p class="contact-cta">I look forward to hearing from you!</p>
+            </div>
+        </section>
+        
+        <div class="page-nav-buttons mb-12">
+            <a href="Hana's profile.html" class="btn"><i class="fas fa-home mr-2"></i> Back to Home</a>
+            <a href="about.html" class="btn"><i class="fas fa-user-circle mr-2"></i> About Me</a>
+        </div>
+        </main>
+
+    <footer id="footer-main">
+        <h2>Hana Barakat</h2>
+        <p class="footer-tagline">Cultivating Connections, Building Futures.</p>
+        <div class="social-links">
+             <a href="https://www.linkedin.com/in/hanabarakat" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+             <a href="mailto:hana.barakat94@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="footer-bottom-text">&copy; 2025 Hana Barakat. All Rights Reserved.</p>
+    </footer>
+
+    <div id="modal-overlay" class="modal-overlay fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex items-center justify-center p-6 z-50 opacity-0 pointer-events-none">
+        <div id="modal-content" class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-full overflow-y-auto p-8 relative">
+            <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-3xl z-10">&times;</button>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- DATA ---
+            const experiences = [
+                {
+                    title: 'Human Resources Business Partner',
+                    company: 'Mangroovy for Real Estate and Tourism Investments',
+                    date: 'Apr 2024 - Aug 2024',
+                    img: 'mangrovy.png',
+                    details: [
+                        'Partnered with business unit leaders to align HR strategies with business objectives.',
+                        'Acted as a trusted advisor to management on employee relations, performance management, and talent development.',
+                        'Managed the full talent acquisition lifecycle, from sourcing to hiring.',
+                        'Developed and implemented compensation and benefits programs to enhance employee engagement.',
+                        'Ensured compliance with all local employment laws and regulations.'
+                    ]
+                },
+                {
+                    title: 'Learning and Development Manager (Pre-Opening)',
+                    company: 'Waldorf Astoria Cairo Heliopolis',
+                    date: 'May 2023 - Mar 2024',
+                    img: 'waldorf-logo.webp',
+                    details: [
+                        'Led the development of a comprehensive training strategy for the hotel\'s pre-opening phase.',
+                        'Collaborated with key stakeholders to identify training needs and deploy effective solutions.',
+                        'Designed and developed curriculum and programs, partnering with internal and external experts.',
+                        'Established performance evaluation methods to measure training effectiveness and ROI.',
+                        'Drove OD and change management initiatives to foster a high-performance culture.'
+                    ]
+                },
+                {
+                    title: 'Learning and Development Manager',
+                    company: 'Four Seasons Hotel Cairo at The First Residence',
+                    date: 'Jan 2021 - May 2023',
+                    img: 'Four-Seasons-Emblem-1024x640.jpg',
+                    details: [
+                        'Identified training needs and implemented solutions to bridge performance gaps.',
+                        'Partnered with the HR team to develop employee engagement programs.',
+                        'Designed and delivered training on various topics to enhance skills and knowledge.',
+                        'Utilized metrics to validate knowledge transfer and return on investment.'
+                    ]
+                },
+                {
+                    title: 'Talent Acquisition Manager',
+                    company: 'Four Seasons Hotel Cairo at The First Residence',
+                    date: 'Jan 2019 - Dec 2020',
+                    img: 'Four-Seasons-Emblem-1024x640.jpg',
+                    details: [
+                        'Planned and implemented the company\'s talent acquisition strategy.',
+                        'Managed the end-to-end recruitment and selection processes.',
+                        'Served as a brand ambassador at career fairs and recruiting events.',
+                        'Generated monthly reports on key talent acquisition metrics for leadership.',
+                        'Conducted exit interviews to gather feedback and improve retention.'
+                    ]
+                }
+            ];
+
+            const educations = [
+                {
+                    title: 'The German University in Cairo (GUC)',
+                    degree: 'Bachelor of Management Technology',
+                    date: '2012 - 2016',
+                    img: 'guc.png',
+                    details: [
+                        '<strong>Major:</strong> Human Resources and Innovation',
+                        'Focused on strategic management, organizational behavior, and HR principles.'
+                    ]
+                },
+                {
+                    title: 'The American University in Cairo (AUC)',
+                    degree: 'Professional Certified Trainer',
+                    date: 'May 2022',
+                    img: 'auc.png',
+                    details: [
+                        'Completed intensive training on adult learning principles, instructional design, and facilitation techniques.',
+                        'Certified to design and deliver high-impact training programs.'
+                    ]
+                }
+            ];
+
+            // --- DOM Elements ---
+            const experienceContainer = document.querySelector('#experience .grid');
+            const educationContainer = document.querySelector('#education .grid');
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalContent = document.getElementById('modal-content');
+            const modalBody = document.getElementById('modal-body');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            // --- Functions ---
+
+            /**
+             * Creates an HTML card element for an item (experience or education).
+             * @param {object} item - The data object for the card.
+             * @param {number} index - The index of the item.
+             * @param {string} type - 'experience' or 'education'.
+             * @returns {string} - The HTML string for the card.
+             */
+            function createCard(item, index, type) {
+                return `
+                    <div class="experience-card group relative rounded-lg shadow-lg overflow-hidden cursor-pointer h-96 bg-cover bg-center text-white flex flex-col justify-end p-6"
+                         style="background-image: url('${item.img}')"
+                         data-type="${type}"
+                         data-index="${index}">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/60"></div>
+
+                        <div class="relative z-10 transform transition-transform duration-300 group-hover:-translate-y-4">
+                            <h3 class="text-2xl font-bold">${item.title}</h3>
+                            <p class="text-gray-200 mt-1 text-md font-semibold">${item.company || item.degree}</p>
+                            <p class="text-gray-300 mt-1 text-sm">${item.date}</p>
+                            <div class="h-14 pt-2">
+                                <button class="mt-4 bg-secondary text-primary py-2 px-5 rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            /**
+             * Populates the modal with the details of the selected item.
+             * @param {object} item - The data object for the modal.
+             */
+            function populateModal(item) {
+                const detailsHtml = item.details.map(detail => `<li class="mb-2 pl-2">${detail}</li>`).join('');
+                modalBody.innerHTML = `
+                    <img src="${item.img}" alt="${item.title}" class="w-full h-64 object-cover rounded-lg mb-6" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image';">
+                    <h2 class="text-3xl font-bold text-primary mb-2">${item.title}</h2>
+                    <p class="text-lg text-tertiary font-semibold mb-2">${item.company || item.degree}</p>
+                    <p class="text-md text-gray-500 mb-6">${item.date}</p>
+                    <h4 class="text-xl font-semibold text-primary mb-3 border-b-2 border-gray-200 pb-2">Key Details:</h4>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mt-4">
+                        ${detailsHtml}
+                    </ul>
+                `;
+            }
+
+            /**
+             * Opens the modal and displays the content for the selected item.
+             * @param {string} type - 'experience' or 'education'.
+             * @param {number} index - The index of the item.
+             */
+            function openModal(type, index) {
+                const data = type === 'experience' ? experiences : educations;
+                const item = data[index];
+                if (item) {
+                    populateModal(item);
+                    modalOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                    modalOverlay.classList.add('active');
+                }
+            }
+
+            /**
+             * Closes the modal.
+             */
+            function closeModal() {
+                modalOverlay.classList.add('opacity-0', 'pointer-events-none');
+                modalOverlay.classList.remove('active');
+            }
+
+            // --- Event Listeners ---
+
+            // Populate cards on page load
+            experienceContainer.innerHTML = experiences.map((item, index) => createCard(item, index, 'experience')).join('');
+            educationContainer.innerHTML = educations.map((item, index) => createCard(item, index, 'education')).join('');
+
+            // Add click listener to all cards to open the modal
+            document.querySelectorAll('.experience-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const type = card.dataset.type;
+                    const index = card.dataset.index;
+                    openModal(type, index);
+                });
+            });
+
+            // Close modal listeners
+            modalCloseBtn.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', (event) => {
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

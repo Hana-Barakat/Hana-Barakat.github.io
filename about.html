@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hana Barakat | About Me</title>
+    <link rel="stylesheet" href="Hana's profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for the About page to enhance interactivity and aesthetics */
+        .about-intro {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 20px;
+            background-color: var(--card-bg-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        .about-intro h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 4px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .about-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-section-card {
+            background: var(--card-bg-color);
+            margin-bottom: 3rem;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .about-section-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-section-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.8rem;
+            font-size: 2.2rem;
+            font-weight: 600;
+            border-bottom: 4px solid var(--secondary-color);
+            padding-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .about-section-card h2 .fas {
+            margin-right: 12px;
+            color: var(--secondary-color);
+        }
+
+        /* Certifications & Courses Section */
+        .certifications-courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .certification-item {
+            background-color: var(--background-color);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid var(--tertiary-color);
+        }
+
+        .certification-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .certification-item h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .certification-item p {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .certification-item .date {
+            font-style: italic;
+            color: var(--tertiary-color);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Adjustments for About Page */
+        @media (max-width: 768px) {
+            .about-intro h1 {
+                font-size: 2.5rem;
+            }
+            .about-intro p {
+                font-size: 1rem;
+            }
+            .about-section-card {
+                padding: 2rem;
+            }
+            .about-section-card h2 {
+                font-size: 1.8rem;
+            }
+            .certifications-courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="header-img">
+            <img src="hana logo.jpeg" >
+        </div>
+        <div class="hero-content">
+            <h1 class="fade-in">Hana Barakat</h1>
+            <p class="fade-in-delay">People & Culture Builder | Talent Acquisition | Organizational Development</p>
+            <div class="hero-about">
+                <p>I am a People and Culture professional in the realm of Talent Acquisition, Employer Branding and Organizational Development. My journey has been shaped by a flair for orchestrating seamless experiences in the world of luxury hospitality. With a passion for creating exceptional guest experiences and fostering high-performance teams, I bring a unique blend of expertise in Human Resources.</p>
+            </div> 
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="Hana's profile.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="about-intro">
+            <h1>About Me</h1>
+            <p>I am a People and Culture Leader in the realm of Learning and Development, Talent Acquisition, Employer Branding and Organizational Development. My journey has been shaped by a flair for orchestrating seamless experiences in the world of luxury hospitality. With a passion for creating exceptional guest experiences and fostering high-performance teams, I bring a unique blend of expertise in Human Resources.</p>
+            <p>My expertise spans across partnering with business unit leaders to drive HR strategies, managing talent acquisition from sourcing to hiring, developing compensation and benefits programs, overseeing performance management, and ensuring compliance with employment laws. I am passionate about nurturing positive working environments and promoting company culture through various HR initiatives.</p>
+        </section>
+
+        <section id="skills-section" class="skills-section about-section-card">
+            <h2><i class="fas fa-tools"></i> My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Talent Acquisition</div>
+                <div class="skill-tag"><h5>Organizational Development</h5></div>
+                <div class="skill-tag">Employer Branding</div>
+                <div class="skill-tag">Learning & Development</div>
+                <div class="skill-tag"><h5> Resources Management</h5></div>
+                <div class="skill-tag">Recruitment</div>
+                <div class="skill-tag">Performance Management</div>
+                <div class="skill-tag">Employee Engagement</div>
+                <div class="skill-tag">Compensation & Benefits</div>
+                <div class="skill-tag">Employee Relations</div>
+                <div class="skill-tag">Training Needs Analysis</div>
+                <div class="skill-tag">Curriculum Development</div>
+                <div class="skill-tag">Change Management</div>
+                <div class="skill-tag">Hospitality HR</div>
+                <div class="skill-tag"><h5>Human Resources Management</h5></div>
+            </div>
+        </section>
+
+        <section class="education-timeline-container about-section-card">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="timeline-wrapper">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="timeline-content guc-card">
+                        <h3 style="color: gold;">The German University in Cairo (GUC)</h3>
+                        <p><strong>Bachelor of Management Technology:</strong> Human Resources and Innovation</p>
+                        <span class="timeline-date">2012 - 2016</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="timeline-content auc-card">
+                        <h3 style="color: gold;">The American University in Cairo (AUC)</h3>
+                        <p><strong>Professional Certified Trainer</strong></p>
+                        <span class="timeline-date">May 2022</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications-courses-section" class="about-section-card">
+            <h2><i class="fas fa-certificate"></i> Certifications & Courses</h2>
+            <div class="certifications-courses-grid">
+                <div class="certification-item">
+                    <h3>Professional Certified Trainer</h3>
+                    <p>American University in Cairo</p>
+                    <span class="date">May 2022</span>
+                </div>
+                <div class="certification-item">
+                    <h3>Labor Law Course no. 12 for the year 2003</h3>
+                    <span class="date">2003</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages-section" class="about-section-card">
+            <h2><i class="fas fa-language"></i> Languages</h2>
+            <div class="skills-grid"> <!-- Reusing skills-grid for language display -->
+                <div class="skill-tag">Arabic - Mother Language</div>
+                <div class="skill-tag">English - Proficient</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer-main">
+        <h2>Hana Barakat</h2>
+        <p class="footer-tagline">Cultivating Connections, Building Futures.</p>
+        <div class="social-links">
+             <a href="https://www.linkedin.com/in/hanabarakat" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+             <a href="mailto:hana.barakat94@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="footer-bottom-text">&copy; 2025 Hana Barakat. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate sections on scroll
+            const sections = document.querySelectorAll('.about-section-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Update image source for profile picture
+            const headerImg = document.querySelector('.header-img img');
+            if (headerImg) {
+                // Placeholder image for now, replace with actual image if available
+                headerImg.src = "Hana logo.jpeg";
+            }
+        });
+    </script>
+</body>
+</html>

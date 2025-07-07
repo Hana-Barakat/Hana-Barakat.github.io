@@ -670,8 +670,22 @@ footer h2 {
     text-shadow: 0 0 20px #D4AF37, 0 0 30px #D4AF37, 0 0 40px #D4AF37;
 }
 
+.footer-location {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-location i {
+    color: var(--secondary-color);
+}
+
 .footer-bottom-text {
-    margin-top: 5rem;
+    margin-top: 2rem; /* Adjusted from 5rem */
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.85);
     opacity: 0.8;

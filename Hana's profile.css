@@ -527,6 +527,9 @@ main {
     .timeline-item:nth-child(even) .timeline-icon {
         left: 10px;
     }
+    .timeline-content {
+    width: 200px;
+    }
 }
 .card {
     background: var(--card-bg-color);

@@ -993,8 +993,7 @@ footer h2 {
 @media (max-width: 768px) {
     /* ... (previous hero section mobile styles) ... */
     .main-nav {
-        border-bottom-right-radius: 50px;
-    border-top-left-radius: 50px;
+    position: static;
     }
 
     .main-nav ul {

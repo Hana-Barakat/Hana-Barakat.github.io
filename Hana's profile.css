@@ -457,6 +457,7 @@ main {
     display: flex;
     flex-direction: column;
     color: #fff;
+    width: 300px;
 }
 
 .timeline-content.auc-card {

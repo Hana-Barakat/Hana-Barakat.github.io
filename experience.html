@@ -302,13 +302,6 @@ footer h2 {
     text-shadow: 0 0 20px #D4AF37, 0 0 30px #D4AF37, 0 0 40px #D4AF37;
 }
 
-.footer-bottom-text {
-    margin-top: 5rem;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.85);
-    opacity: 0.8;
-}
-
 @keyframes textGlow {
     0% { text-shadow: 3px 3px 8px rgba(0,0,0,0.4), 0 0 10px #D4AF37; }
     100% { text-shadow: 3px 3px 10px rgba(0,0,0,0.6), 0 0 20px #D4AF37, 0 0 30px #D4AF37; }
@@ -359,6 +352,26 @@ footer h2 {
         margin-top: 3rem;
         font-size: 0.9rem;
     }
+}
+        .footer-location {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-location i {
+    color: var(--secondary-color);
+}
+
+.footer-bottom-text {
+    margin-top: 2rem; /* Adjusted from 5rem */
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    opacity: 0.8;
 }
     </style>
 </head>
@@ -412,15 +425,17 @@ footer h2 {
         </div>
         </main>
 
-    <footer id="footer-main">
+     <footer id="footer-main">
         <h2>Hana Barakat</h2>
         <p class="footer-tagline">Cultivating Connections, Building Futures.</p>
         <div class="social-links">
              <a href="https://www.linkedin.com/in/hanabarakat" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
              <a href="mailto:hana.barakat94@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
         </div>
-        <p class="footer-bottom-text">&copy; 2025 Hana Barakat. All Rights Reserved.</p>
-    </footer>
+        <div class="footer-location">
+            <i class="fas fa-map-marker-alt" style="color: #D4AF37;"></i>
+            <span>Dubai, UAE</span>
+        </div>
 
     <div id="modal-overlay" class="modal-overlay fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex items-center justify-center p-6 z-50 opacity-0 pointer-events-none">
         <div id="modal-content" class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-full overflow-y-auto p-8 relative">
